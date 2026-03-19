@@ -61,10 +61,13 @@ home.packages = with pkgs; [
   # Link your existing dotfiles
   # Adjust paths to match what's in your repo
 home.file = {
-    ".config".source = ./dotfiles/.config;
-    ".tmux.conf".source = ./dotfiles/.tmux.conf;
-    ".zshrc".source = ./dotfiles/.zshrc;
-    ".config/wallpaper.jpg".source = ./dotfiles/1379845.jpg;
+    ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/Jan/.config/nixos/dotfiles/.config/hypr";
+    ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "/home/Jan/.config/nixos/dotfiles/.config/ghostty";
+    ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "/home/Jan/.config/nixos/dotfiles/.config/waybar";
+    ".config/wofi".source = config.lib.file.mkOutOfStoreSymlink "/home/Jan/.config/nixos/dotfiles/.config/wofi";
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/Jan/.config/nixos/dotfiles/.config/nvim";
+    ".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/Jan/.config/nixos/dotfiles/.tmux.conf";
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "/home/Jan/.config/nixos/dotfiles/.zshrc";
   };
 
   programs.home-manager.enable = true;

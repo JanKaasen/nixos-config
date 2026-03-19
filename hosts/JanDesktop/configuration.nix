@@ -67,6 +67,7 @@
     git
     wget
     curl
+    sbctl
   ];
 
   programs.zsh.enable = true;

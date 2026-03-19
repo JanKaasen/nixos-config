@@ -39,13 +39,6 @@ home.packages = with pkgs; [
     python3
     python3Packages.pip
 
-    # Haskell
-    ghcup
-    stack
-    cabal-install
-    hoogle
-    ormolu
-
     # Dev tools
     ripgrep
     fd
@@ -56,6 +49,20 @@ home.packages = with pkgs; [
     # Apps
     discord
     spotify
+
+    starship
+    tmux
+    lazygit
+
+    lua5_1
+        lua51Packages.luarocks
+    tree-sitter
+
+    fastfetch
+    
+    waybar
+    wofi
+    nerd-fonts.jetbrains-mono
 ];
 
   # Link your existing dotfiles

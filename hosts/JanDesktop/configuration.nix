@@ -4,12 +4,12 @@
   imports = [ ./hardware-configuration.nix ];
 
   # Bootloader / Secure Boot
-  boot.loader.systemd-boot.enable = false;
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/etc/secureboot";
-  };
+  #boot.lanzaboote = {
+  #  enable = true;
+  #  pkiBundle = "/etc/secureboot";
+  #};
 
   # Networking
   networking.hostName = "JanDesktop";

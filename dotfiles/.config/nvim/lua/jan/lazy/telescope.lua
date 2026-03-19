@@ -1,4 +1,5 @@
 return {
+
     "nvim-telescope/telescope.nvim",
 
     tag = "0.1.5",
@@ -39,4 +40,5 @@ return {
         pcall(require('telescope').load_extension, 'fzf')
         pcall(require('telescope').load_extension, 'ui-select')
     end
+
 }

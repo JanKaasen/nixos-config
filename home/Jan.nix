@@ -18,12 +18,15 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
+    ];
   };
 
 home.packages = with pkgs; [
     ghostty
     inputs.zen-browser.packages."${pkgs.system}".default
-        # Java
+    # Java
     jdk
 
     # Rust
@@ -56,13 +59,14 @@ home.packages = with pkgs; [
 
     lua5_1
         lua51Packages.luarocks
-    tree-sitter
 
     fastfetch
     
     waybar
     wofi
     nerd-fonts.jetbrains-mono
+    nodejs
+    hyprshot
 ];
 
   # Link your existing dotfiles

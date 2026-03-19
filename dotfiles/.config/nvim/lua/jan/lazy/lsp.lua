@@ -29,7 +29,6 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"pyright",
-				"hls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)

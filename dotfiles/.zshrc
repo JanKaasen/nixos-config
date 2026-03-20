@@ -19,13 +19,13 @@ export NVM_DIR="$HOME/.nvm"
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="$HOME/.local/scripts:$PATH"
-export PATH=/home/jan/.cargo/bin:$PATH
-export PATH=/home/jan/.local/bin:$PATH
+export PATH=/home/Jan/.cargo/bin:$PATH
+export PATH=/home/Jan/.local/bin:$PATH
 export PATH="$HOME/.cabal/bin:$PATH"
 export EDITOR='nvim'
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_SESSION_DESKTOP=Hyprland
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 export PATH=$JAVA_HOME/bin:$PATH
 # export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
 

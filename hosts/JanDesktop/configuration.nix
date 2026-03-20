@@ -55,6 +55,8 @@
   # nix-ld for GHCup
   programs.nix-ld.enable = true;
 
+  programs.xwayland.enable = true;
+
   # User
   users.users.Jan = {
     isNormalUser = true;

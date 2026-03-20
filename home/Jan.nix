@@ -19,7 +19,6 @@
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
     ];
   };
 
@@ -27,7 +26,8 @@ home.packages = with pkgs; [
     ghostty
     inputs.zen-browser.packages."${pkgs.system}".default
     # Java
-    jdk
+    jdk25
+    maven
 
     # Rust
     rustup

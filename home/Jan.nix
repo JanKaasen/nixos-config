@@ -8,8 +8,8 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "Jan Trygve Kaasen";
-    userEmail = "jtkaasen@gmail.com";
+    settings.user.name = "Jan Trygve Kaasen";
+    settings.user.email = "jtkaasen@gmail.com";
   };
 
   # Neovim
@@ -21,6 +21,13 @@
     plugins = with pkgs.vimPlugins; [
     ];
   };
+
+  programs.chromium = {
+  enable = true;
+  commandLineArgs = [
+    "--ozone-platform=wayland"
+  ];
+};
 
 home.packages = with pkgs; [
     ghostty

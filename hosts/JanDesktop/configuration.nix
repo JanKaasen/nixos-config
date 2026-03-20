@@ -27,13 +27,17 @@
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+      extraPackages = with pkgs; [
+    nvidia-vaapi-driver
+  ];
   };
 
   # Hyprland
@@ -41,6 +45,12 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+
+    environment.sessionVariables = {
+        LIBGL_ALWAYS_SOFTWARE = "0";
+        NIXOS_OZONE_WL = "1";
+    };
+  
 
   # Steam
   programs.steam.enable = true;
@@ -52,8 +62,24 @@
   # SSH
   services.openssh.enable = true;
 
-  # nix-ld for GHCup
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+  enable = true;
+  libraries = with pkgs; [
+    libglvnd
+    libGL
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXext
+    xorg.libXrandr
+    xorg.libXxf86vm
+    xorg.libXinerama
+    xorg.libXi
+    libxkbcommon
+    alsa-lib
+    openal
+    udev
+  ];
+};
 
   programs.xwayland.enable = true;
 
@@ -70,6 +96,8 @@
     wget
     curl
     sbctl
+    libglvnd
+    vulkan-tools
   ];
 
   programs.zsh.enable = true;

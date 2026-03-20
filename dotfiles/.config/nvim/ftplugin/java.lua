@@ -14,7 +14,7 @@ if os_name == "Darwin" then
 elseif os_name == "Linux" then
     -- Linux specific paths
     config_path = jdtls_path .. '/config_linux'
-    java_cmd = '/usr/bin/java' -- Adjust this if your Java is elsewhere on Linux
+    java_cmd = 'java' -- Adjust this if your Java is elsewhere on Linux
 else
     -- Windows or other OS
     config_path = jdtls_path .. '/config_win'
